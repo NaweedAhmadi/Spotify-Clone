@@ -124,7 +124,24 @@
             </div>
 
         </div>
-        <div class="music-player">Media Player</div>
+        <div class="music-player">
+            <div class="album"></div>
+            <div class="player">
+                <div class="player-controls">
+                    <img src="assets/player_icon1.png" alt="player_icon1" class="player-icon">
+                    <img src="assets/player_icon2.png" alt="player_icon2" class="player-icon">
+                    <img src="assets/player_icon3.png" alt="player_icon3" class="player-controls play">
+                    <img src="assets/player_icon4.png" alt="player_icon4" class="player-icon">
+                    <img src="assets/player_icon5.png" alt="player_icon5" class="player-icon">
+                </div>
+                <div class="playback-bar">
+                    <span id="current-time">0:00</span>
+                    <input type="range" min="0" max="100" step="0.5" value="0" id="progress-bar">
+                    <span id="total-time">3:32</span>
+                </div>
+            </div>
+            <div class="controls"></div>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>

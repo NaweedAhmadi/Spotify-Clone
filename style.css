@@ -14,7 +14,6 @@ body {
 .sidebar {
     background-color: #000;
     width: 340px;
-    border-radius: 1rem; /* 16px */
 }
 
 .main-content {
@@ -23,6 +22,25 @@ body {
     border-radius: 1rem; /* 16px */
     overflow: auto;
     padding: 0 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.main-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.main-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 1rem;
+}
+  
+.main-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 1rem;
+}
+  
+.main-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .music-player {
@@ -30,7 +48,7 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 72px;
+    height: auto;
 }
 
 a {
@@ -208,6 +226,78 @@ a {
     height: 20%;
     border-bottom: solid 1px #fff;
     opacity: 0.4;
+}
+
+.album {
+    width: 25%;
+}
+
+.player {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-icon {
+    width: 1rem;
+    height: 1rem;
+    margin: 1.25rem;
+    opacity: 0.7;
+}
+
+.player-icon:hover {
+    opacity: 1;
+}
+
+.play {
+    width: 2rem;
+    height: 2rem;
+    opacity: 1;
+}
+
+.playback-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.playback-bar input[type="range"] {
+    width: 60%;
+    appearance: none;
+    background: transparent; /* Prevent default background */
+    cursor: pointer;
+}
+
+.playback-bar input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #1bd760 var(--completed-portion, 0%), #ddd var(--completed-portion, 0%));
+    border-radius: 1rem;
+    height: 0.2rem;
+}
+
+.playback-bar input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    height: 0.75rem;
+    width: 0.75rem;
+    border-radius: 50%;
+    background-color: #1bd760;
+    margin-top: -0.25rem; /* Align the thumb */
+    position: relative; /* Ensure thumb is above track */
+    z-index: 1; /* Bring thumb to the front */
+}
+
+.controls {
+    width: 25%;
 }
 
 @media screen and (max-width: 1000px) {
