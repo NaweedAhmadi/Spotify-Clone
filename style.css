@@ -1,3 +1,7 @@
+:root {
+    --volume-level: 50%;
+}
+
 body {
     font-family: "Montserrat", serif;
     margin: 0;
@@ -228,18 +232,64 @@ a {
     opacity: 0.4;
 }
 
+.music-player {
+    display: flex;
+}
+
 .album {
     width: 25%;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.album img {
+    width: 3.75rem;
+    height: 3.75rem;
+    margin-right: 1rem;
+    border-radius: 0.25rem;
+}
+
+.album div p {
+    margin: 0 1rem 0 0;
+}
+
+.album div p:first-child {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.album div p:first-child:hover {
+    cursor: pointer;
+}
+
+.album div p:last-child {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+.album i {
+    font-size: 0.75rem;
+    padding: 0.20rem 0.25rem;
+    border: solid 2px #fff;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.album i:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 .player {
     width: 50%;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0.5rem 0;
+    box-sizing: border-box;
 }
 
 .player-controls {
@@ -298,6 +348,42 @@ a {
 
 .controls {
     width: 25%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 1rem;
+}
+
+.controls > * {
+    margin-right: 1rem;
+    opacity: 0.8;
+}
+
+.controls > *:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.controls input[type="range"] {
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.controls input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #1bd760 var(--volume-level, 0%), #ddd var(--volume-level, 0%));
+    border-radius: 1rem;
+    height: 0.2rem;
+}
+
+.controls input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    height: 0.75rem;
+    width: 0.75rem;
+    border-radius: 50%;
+    background-color: #1bd760;
+    margin-top: -0.25rem;
 }
 
 @media screen and (max-width: 1000px) {

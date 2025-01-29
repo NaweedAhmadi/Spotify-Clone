@@ -1,4 +1,5 @@
 const slider = document.querySelector('#progress-bar');
+const volume = document.querySelector('#volume');
 const currentTime = document.querySelector('#current-time');
 
 // Total duration in seconds (3:32 = 212 seconds)
@@ -18,6 +19,11 @@ slider.addEventListener('input', () => {
 
     // Format the time string to include leading zeros for seconds
     currentTime.innerText = `${minute}:${seconds.toString().padStart(2, '0')}`;
+});
+
+volume.addEventListener('input', () => {
+    const value = volume.value;
+    volume.style.setProperty('--volume-level', `${value}%`);
 });
 
 
